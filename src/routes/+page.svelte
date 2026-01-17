@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import BVMark from '$lib/components/BVMark.svelte';
 	import { scrollReveal } from '$lib/actions/scrollReveal';
 
@@ -65,8 +66,8 @@
 				Making bespoke software solutions<br />accessible to any business.
 			</p>
 			<div class="hero-cta">
-				<a href="/contact" class="btn btn-primary btn-large">Start your project</a>
-				<a href="/about" class="btn btn-secondary">Meet the team</a>
+				<a href="{base}/contact" class="btn btn-primary btn-large">Start your project</a>
+				<a href="{base}/about" class="btn btn-secondary">Meet the team</a>
 			</div>
 			<div class="hero-clients">
 				<span class="clients-label">Trusted by teams at</span>
@@ -103,7 +104,7 @@
 				</div>
 				<h3>Digital Product Management</h3>
 				<p>From vision to roadmap to delivery. Senior product leadership without the full-time commitment.</p>
-				<a href="/services" class="service-link">Learn more →</a>
+				<a href="{base}/services" class="service-link">Learn more →</a>
 			</div>
 			<div class="service-preview" use:scrollReveal={{ delay: 100 }}>
 				<div class="service-icon">
@@ -114,7 +115,7 @@
 				</div>
 				<h3>Software Development</h3>
 				<p>Custom software that ships. Web applications, mobile apps, and APIs with modern stacks.</p>
-				<a href="/services" class="service-link">Learn more →</a>
+				<a href="{base}/services" class="service-link">Learn more →</a>
 			</div>
 			<div class="service-preview" use:scrollReveal={{ delay: 200 }}>
 				<div class="service-icon">
@@ -125,7 +126,7 @@
 				</div>
 				<h3>Digital Transformation</h3>
 				<p>Modernize without the chaos. Move from legacy systems to modern platforms.</p>
-				<a href="/services" class="service-link">Learn more →</a>
+				<a href="{base}/services" class="service-link">Learn more →</a>
 			</div>
 		</div>
 	</div>
@@ -235,7 +236,7 @@
 	<div class="container" use:scrollReveal>
 		<h2>Ready to ship your next project?</h2>
 		<p>Let's discuss how we can help you move from idea to production.</p>
-		<a href="/contact" class="btn btn-primary">Get in touch</a>
+		<a href="{base}/contact" class="btn btn-primary">Get in touch</a>
 	</div>
 </section>
 

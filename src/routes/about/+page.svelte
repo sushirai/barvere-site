@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { scrollReveal } from '$lib/actions/scrollReveal';
 
 	const founders = [
@@ -172,7 +173,7 @@
 	<div class="container" use:scrollReveal>
 		<h2>Want to work with us?</h2>
 		<p>Let's discuss your project and see if we're a good fit.</p>
-		<a href="/contact" class="btn btn-primary">Get in touch</a>
+		<a href="{base}/contact" class="btn btn-primary">Get in touch</a>
 	</div>
 </section>
 

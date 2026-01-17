@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { scrollReveal } from '$lib/actions/scrollReveal';
 
 	const services = [
@@ -134,7 +135,7 @@
 	<div class="container" use:scrollReveal>
 		<h2>Let's scope your project together</h2>
 		<p>Tell us what you're building and we'll share how we can help.</p>
-		<a href="/contact" class="btn btn-primary">Start the conversation</a>
+		<a href="{base}/contact" class="btn btn-primary">Start the conversation</a>
 	</div>
 </section>
 

@@ -1,18 +1,20 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	const currentYear = new Date().getFullYear();
 
 	const links = [
-		{ label: 'Services', href: '/services' },
-		{ label: 'Work', href: '/work' },
-		{ label: 'About', href: '/about' },
-		{ label: 'Contact', href: '/contact' }
+		{ label: 'Services', href: `${base}/services` },
+		{ label: 'Work', href: `${base}/work` },
+		{ label: 'About', href: `${base}/about` },
+		{ label: 'Contact', href: `${base}/contact` }
 	];
 </script>
 
 <footer>
 	<div class="footer-container">
 		<div class="footer-main">
-			<a href="/" class="footer-logo">
+			<a href="{base}/" class="footer-logo">
 				<span class="footer-icon">
 					<svg viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<rect x="1" y="1" width="30" height="22" stroke="currentColor" stroke-width="1.5" fill="none"/>

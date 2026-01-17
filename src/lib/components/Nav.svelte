@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	const navItems = [
-		{ label: 'Services', href: '/services' },
-		{ label: 'Work', href: '/work' },
-		{ label: 'About', href: '/about' },
-		{ label: 'Contact', href: '/contact' }
+		{ label: 'Services', href: `${base}/services` },
+		{ label: 'Work', href: `${base}/work` },
+		{ label: 'About', href: `${base}/about` },
+		{ label: 'Contact', href: `${base}/contact` }
 	];
 
 	// Check if we're on homepage
-	let isHomepage = $derived($page.url.pathname === '/');
+	let isHomepage = $derived($page.url.pathname === base + '/' || $page.url.pathname === base);
 	let currentPath = $derived($page.url.pathname);
 
 	// Track scroll for homepage icon reveal and fold effect
@@ -71,7 +72,7 @@
 
 <nav class:scrolled={hasScrolled}>
 	<div class="nav-container">
-		<a href="/" class="logo" class:clicked={iconVisible} onclick={closeMobileMenu}>
+		<a href="{base}/" class="logo" class:clicked={iconVisible} onclick={closeMobileMenu}>
 			<span
 				class="logo-icon"
 				class:visible={iconVisible && !isExiting}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { scrollReveal } from '$lib/actions/scrollReveal';
 	import BVMark from '$lib/components/BVMark.svelte';
 
@@ -98,7 +99,7 @@
 		</div>
 		<h2>Your project could be next</h2>
 		<p>Let's discuss how we can help you achieve similar results.</p>
-		<a href="/contact" class="btn btn-primary">Start a conversation</a>
+		<a href="{base}/contact" class="btn btn-primary">Start a conversation</a>
 	</div>
 </section>
 
