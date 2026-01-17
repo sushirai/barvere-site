@@ -6,32 +6,49 @@
 
 	let scrollY = $state(0);
 	let markElement: HTMLElement;
+	let isMobile = $state(false);
 
 	onMount(() => {
+		// Check if mobile
+		const checkMobile = () => {
+			isMobile = window.innerWidth <= 768;
+		};
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
 		const handleScroll = () => {
 			scrollY = window.scrollY;
 		};
 		window.addEventListener('scroll', handleScroll, { passive: true });
-		return () => window.removeEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', checkMobile);
+		};
 	});
 
 	// Progress through hero section (0 to 1)
-	let scrollThreshold = 400;
-	let scrollProgress = $derived(Math.min(scrollY / scrollThreshold, 1));
+	// Mobile needs longer threshold for slower animation
+	let scrollThreshold = $derived(isMobile ? 600 : 400);
+
+	// Use eased progress for smoother animation
+	let rawProgress = $derived(Math.min(scrollY / scrollThreshold, 1));
+	// Ease-out curve makes animation start fast then slow down
+	let scrollProgress = $derived(1 - Math.pow(1 - rawProgress, 2));
 
 	// Mark pours to top-left corner (where nav logo will appear)
 	let markStartX = $derived(markElement?.getBoundingClientRect().left ?? 600);
 	let markStartY = $derived(markElement?.getBoundingClientRect().top ?? 300);
-	let markTranslateX = $derived(scrollProgress * -(markStartX - 24));
-	let markTranslateY = $derived(scrollProgress * -(markStartY - 28 + scrollY));
-	let markScale = $derived(1 - scrollProgress * 0.91);
-	let markOpacity = $derived(1 - scrollProgress);
+	let markTranslateX = $derived(rawProgress * -(markStartX - 24));
+	let markTranslateY = $derived(rawProgress * -(markStartY - 28 + scrollY));
+	let markScale = $derived(1 - rawProgress * 0.91);
+	let markOpacity = $derived(1 - rawProgress * 1.5);
 
-	// Hero content fades with scroll
-	let heroContentOpacity = $derived(1 - scrollProgress * 1.2);
+	// Hero content fades with scroll (use raw progress for content fade)
+	let heroContentOpacity = $derived(1 - rawProgress * 1.5);
 
-	// Hero height shrinks as you scroll (100vh down to 0)
-	let heroHeight = $derived(100 - scrollProgress * 100);
+	// Hero height shrinks as you scroll - minimum 10vh on mobile to prevent jarring collapse
+	let minHeight = $derived(isMobile ? 10 : 0);
+	let heroHeight = $derived(Math.max(minHeight, 100 - scrollProgress * 100));
 
 	// Clients/logos that worked with
 	const clients = ['Absa', 'Sanlam', 'APA Insurance', 'Standard Bank'];
@@ -253,7 +270,7 @@
 		align-items: center;
 		padding-top: var(--nav-height);
 		overflow: hidden;
-		transition: min-height 0.1s ease-out;
+		will-change: min-height;
 	}
 
 	.hero-container {
