@@ -14,6 +14,17 @@ const config = {
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/barvere-site' : ''
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore missing images (placeholder photos that don't exist yet)
+				if (path.startsWith('/images/')) {
+					console.warn(`Warning: Missing image ${path} (referenced from ${referrer})`);
+					return;
+				}
+				// Throw for other errors
+				throw new Error(message);
+			}
 		}
 	}
 };
