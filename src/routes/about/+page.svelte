@@ -4,22 +4,8 @@
 
 	const founders = [
 		{
-			name: 'Tapfuma Mvere',
-			role: 'Co-Founder',
-			initials: 'TM',
-			photo: '/images/tapfuma.jpg',
-			linkedin: 'https://www.linkedin.com/in/tapfumamvere/',
-			bio: 'Tapfuma brings over 11 years of experience building digital products in financial services. His deep technical background combined with product strategy expertise makes him uniquely positioned to bridge the gap between business vision and technical execution.',
-			experience: [
-				'11+ years at ABSA Capital',
-				'Product Lead at Sanlam Wealth',
-				'GIBS MBA'
-			],
-			focus: 'Product strategy, wealth & banking, technical architecture'
-		},
-		{
 			name: 'LeRoy Barnes',
-			role: 'Co-Founder',
+			role: 'Founder',
 			initials: 'LB',
 			photo: '/images/leroy.jpg',
 			linkedin: 'https://www.linkedin.com/in/leroy-barnes/',
@@ -34,7 +20,7 @@
 	];
 
 	const stats = [
-		{ number: '30+', label: 'Years combined experience' },
+		{ number: '15+', label: 'Years experience' },
 		{ number: '5', label: 'African markets served' },
 		{ number: '3', label: 'Major banks partnered' }
 	];
@@ -57,10 +43,10 @@
 
 <section class="about-hero">
 	<div class="container">
-		<h1>Two founders,<br />one vision</h1>
+		<h1>Built by<br />practitioners</h1>
 		<p class="lead">
-			Barvere is <strong>Bar</strong>nes + M<strong>vere</strong>. A partnership built on decades
-			of delivering digital products in African financial services.
+			Barvere was founded on decades of experience delivering digital products
+			in African financial services.
 		</p>
 	</div>
 </section>
@@ -135,17 +121,17 @@
 		<div class="story-content" use:scrollReveal>
 			<div class="section-header">
 				<span class="section-label">Our story</span>
-				<h2>Why we started Barvere</h2>
+				<h2>Why I started Barvere</h2>
 			</div>
 			<div class="story-text">
 				<p>
-					After years of building digital products inside large financial institutions, we saw the same pattern repeat: companies needed senior digital expertise but couldn't justify full-time hires, or they hired consultancies that delivered beautiful slide decks but couldn't ship code.
+					After years of building digital products inside large financial institutions, I saw the same pattern repeat: companies needed senior digital expertise but couldn't justify full-time hires, or they hired consultancies that delivered beautiful slide decks but couldn't ship code.
 				</p>
 				<p>
-					We started Barvere to be the partner we wished we had. Senior practitioners who understand African financial services, can define strategy, and can actually build and ship the product.
+					I started Barvere to be the partner I wished I had. A senior practitioner who understands African financial services, can define strategy, and can actually build and ship the product.
 				</p>
 				<p>
-					The name? It's simple. <strong>Bar</strong>nes + M<strong>vere</strong>. Two founders committed to making bespoke software solutions accessible to any business.
+					Barvere is about making bespoke software solutions accessible to any business.
 				</p>
 			</div>
 		</div>

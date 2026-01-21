@@ -239,11 +239,8 @@
 					<div class="info-content">
 						<h3>Connect</h3>
 						<div class="social-links">
-							<a href="https://www.linkedin.com/in/tapfumamvere/" target="_blank" rel="noopener">
-								Tapfuma on LinkedIn →
-							</a>
 							<a href="https://www.linkedin.com/in/leroy-barnes/" target="_blank" rel="noopener">
-								LeRoy on LinkedIn →
+								LinkedIn →
 							</a>
 						</div>
 					</div>
